@@ -1,2 +1,17 @@
-# ddz
-simple pocker game implemented in JS and C++
+# 斗地主实现
+
+##申明
+然而这应该不是最后的代码。
+因为是计算机网络课的作业，
+课程结束后我就手贱把所有东西删了，
+这是之前小组成员备份的老版本，存在一些服务端爆炸的bug。
+
+##客户端
+采用React+Flux框架构建
+因为使用了TCP协议，所以才用了NodeJS中的TCP，最后编译出的代码需要封装在NW.js中
+
+##服务端
+服务端由chenx、光源、[寂寞伟](https://github.com/SunForJL/)编写
+
+##报文
+包括英萌萌在内所有组员共同设计

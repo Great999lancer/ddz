@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+  <head>
+    <title>男人的斗地主</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="normalize.css" >
+    <link rel="stylesheet" type="text/css" href="main.css" >
+  </head>
+  <body>
+    <section id="content" class="container"></section>
+    <script>
+      //不知道为什么，这里才是nodejs context
+      //nodejs net
+      var net = require('net');
+      //nodejs binary
+      var binary = require('binary');
+      //nodejs stream
+      var stream = require('stream');
+      //nodejs Buffer
+      //var Buffer = require('buffer');
+      //client
+      var client;
+      function bufferConcat(arry, length){
+        if(length)
+          return Buffer.concat(arry);
+        else
+          return Buffer.concat(arry,length);
+      }
+
+
+      //server for test
+      var server = net.createServer(function(c) { //'connection' listener
+        console.log('[server] 客户端已连接');
+        c.on('end', function() {
+          console.log('[server] 客户端断开');
+        });
+        c.write('hello\r\n');
+        c.pipe(c);
+
+        c.on('data',function(data){
+          console.log('[server] ' + '收到:' + data.toString());
+          c.write(new Buffer([12,23,23]));
+          c.write('hello again');
+        });
+      });
+
+
+
+      server.listen(8123, function() { //'listening' listener
+        console.log('[server] 绑定成功');
+      });
+
+    </script>
+    <script src="shim.js"></script>
+    <script src="bundle.js"></script>
+  </body>
+</html>

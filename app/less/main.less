@@ -1,0 +1,233 @@
+@import "node_modules/material-ui/src/less/scaffolding.less";
+@import "node_modules/material-ui/src/less/components.less";
+
+body{
+  height:700px;
+  width:1200px;
+}
+
+.container{
+  height: 100%;
+}
+.verticalCenter{
+  height:100%;
+  width:100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background: #3498db;
+}
+.info{
+  background: white;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  .data{
+    display: inline-block;
+    vertical-align: middle;
+    padding:12px;
+  }
+}
+.rooms{
+  height:100%;
+  width:100%;
+  background: #e74c3c;
+  overflow: hidden;
+  padding:3% 0 0 0;
+}
+
+.room{
+  width:18%;
+  margin:4% 3% 0;
+  height:40%;
+  background: white;
+  border:1px solid black;
+  display: inline-block;
+  .mui-paper-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  cursor: pointer;
+}
+.loading{
+  width:380px;
+  text-align:center;
+  margin:320px auto 0;
+  background:white;
+  .mui-paper-container {
+    padding: 34px 0;
+  }
+}
+
+.login{
+  width:380px;
+  margin:auto;
+  text-align:center;
+  background:white;
+  .mui-paper-container{
+    padding: 72px 0;
+  }
+}
+.loginButton{
+  display:block;
+  margin:24px auto 0;
+}
+
+
+.game{
+  background:#34495e;
+  height:100%;
+  width:100%;
+
+  .exit{
+    position:absolute;
+    right:530px;
+    top:12px;
+  }
+  .others{
+    float:left;
+  }
+  .others.right{
+    float:right;
+  }
+
+  .main{
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+    color: #fff;
+    height:190px;
+    padding:0 164px;
+    .myInfo{
+      padding:0;
+      list-style-type: none;
+      width:100px;
+      position:absolute;
+      right:162px;
+      top:-84px;
+      .name{
+        font-size:1.4em;
+        font-weight: bold;
+
+      }
+    }
+
+    .cardsArea{
+      height: 100%;
+      width: 100%;
+      .actions {
+        position: absolute;
+        margin-top: -50px;
+        text-align: center;
+        left: 0;
+        right: 0;
+
+        .primary{
+          background:#ff4081;
+          margin:0 12px 0 0;
+          color:white;
+        }
+      }
+    }
+  }
+}
+
+
+.cards,.myCards{
+  list-style: none;
+  li{
+    font-size:1.3em;
+    text-align:right;
+    height:28px;
+    >.hide{
+      background:#eee;
+    }
+    >div{
+      height:120px;
+      background:#fefefe;
+      span{
+        display:inline-block;
+        padding:3px 12px;
+
+      }
+      span.red{
+        color: #ff1744;
+      }
+      span.grey{
+        color: grey;
+      }
+    }
+  }
+}
+
+.myCards, .masterCards{
+  p{
+    text-align:center;
+    color:white;
+    padding:60px 0 0 0;
+  }
+  li{
+    cursor: pointer;
+    color:#000;
+    height:auto;
+    width:48px;
+    display:inline-block;
+    vertical-align: top;
+    text-align:left;
+    >div{
+      width:48px;
+      span{
+        padding:6px 0 0 5px;
+      }
+    }
+  }
+  li.selected{
+    transform:translate3d(0,-25px,0);
+  }
+}
+
+
+
+.others{
+  width:140px;
+  height:700px;
+  padding:17px;
+  position:relative;
+  .user{
+    position:absolute;
+    right:-100px;
+    p{
+      color:white;
+      margin:0;
+    }
+    .name{
+      font-size: 1.4em;
+      font-weight: bold;
+    }
+  }
+}
+
+.others.right{
+  .user{
+    right:auto;
+    left:-100px;
+  }
+  .cards{
+    li{
+      text-align: left;
+    }
+  }
+
+}
+
+.masterCards{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  text-align:center;
+}
